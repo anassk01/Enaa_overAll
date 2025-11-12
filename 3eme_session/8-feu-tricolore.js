@@ -1,4 +1,5 @@
-let couleur = "rouge";
+const prompt = require('prompt-sync')();
+let couleur = prompt("Entrez une couleur (rouge/jaune/vert): ");
 
 switch (couleur) {
     case "rouge":

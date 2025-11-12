@@ -1,5 +1,6 @@
-let nombre1 = 15;
-let nombre2 = 23;
+const prompt = require('prompt-sync')();
+let nombre1 = parseInt(prompt("Entrez le premier nombre: "));
+let nombre2 = parseInt(prompt("Entrez le deuxième nombre: "));
 
 if (nombre1 > nombre2) {
     console.log(nombre1);

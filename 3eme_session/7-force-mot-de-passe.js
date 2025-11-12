@@ -1,4 +1,5 @@
-let motDePasse = "abc123!@";
+const prompt = require('prompt-sync')();
+let motDePasse = prompt("Entrez un mot de passe: ");
 
 let contientChiffre = /\d/.test(motDePasse);
 let contientSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(motDePasse);

@@ -1,4 +1,5 @@
-let nombre = -5;
+const prompt = require('prompt-sync')();
+let nombre = parseInt(prompt("Entrez un nombre: "));
 
 if (nombre > 0) {
     console.log("positif");
