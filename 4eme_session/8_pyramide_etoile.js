@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 let nombre = parseInt(prompt("donner un nombre entier: "));
-
-for (let i = 1; i <= nombre; i++) {
+let compteur = 0;
+for (let i = 1; compteur < nombre; i++) {
     let estPremier = i*2- 1 >= 2;
     
     for (let j = 2; j < i * 2 - 1; j++) { 
@@ -9,7 +9,8 @@ for (let i = 1; i <= nombre; i++) {
     }
     
     if (!estPremier) continue;
-let spaces = " ".repeat(nombre - i);
+let spaces = " ".repeat(nombre - compteur-1);
     let etoiles = "*".repeat(i*2- 1);
     console.log(spaces + etoiles);
+    compteur++
 }
