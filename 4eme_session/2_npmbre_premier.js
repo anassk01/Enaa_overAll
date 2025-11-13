@@ -2,7 +2,7 @@ const prompt = require('prompt-sync')();
 
 let nombre= parseInt(prompt("donner une nombre entier "));
 let estPremier = false 
-for (let i = 2 ; i<=10 ;i++) {
+for (let i = 2 ; i<=nombre-1 ;i++) {
     if (nombre % i == 0 ){
         break;
     }
