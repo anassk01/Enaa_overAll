@@ -5,7 +5,7 @@ for (let i = 1; i <= nombre; i++) {
     let estPremier = i*2- 1 >= 2;
     
     for (let j = 2; j < i * 2 - 1; j++) { 
-             if (i*2- 1 % j == 0) {estPremier = false;break;}
+             if ((i*2- 1) % j == 0) {estPremier = false;break;}
     }
     
     if (!estPremier) continue;
