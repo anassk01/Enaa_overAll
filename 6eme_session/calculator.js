@@ -14,7 +14,7 @@ function puissance(nombre1, nombre2){return nombre1 ** nombre2}
 function racineCarre(nombre1,nombre2){ return [Math.sqrt(nombre1).toFixed(2),Math.sqrt(nombre2).toFixed(2)]}
 
 function factorielle (nombre){
-    if (nombre < 0) return "erreur"
+    if (nombre < 0 || !Number.isInteger(nombre)) return "erreur"
     if (nombre === 0) return 1;
     let re=1
     for (let i = 1 ;i<=nombre;i++){
@@ -46,7 +46,14 @@ else if (menu == "c") {
 let nombre1= parseFloat(prompt("donner le nombre 1 : "));
 
 let nombre2= parseFloat(prompt("donner le nombre 2 : "));
+
+
+if (isNaN(nombre1) || isNaN(nombre2 )) {
+    console.log("entrer des nombres valides.");continue; 
+}
+
 console.log("choisir l'operation \n + :addition \n - : soustraction \n * : multiplication \n / : division \n ** :puissance  \n sqrt :racince carre  \n ! :factorielle ")
+
 
 let operation= prompt("donner l'operation : ");
 
