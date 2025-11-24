@@ -7,7 +7,8 @@ const menu =`=== To-Do List ===
 5. Supprimer une tache
 6. Marquer une tache comme Termine
 7. Afficher taches Termines / en attente
-0. Quitter`
+0. Quitter
+`
 
 let list = []
 
@@ -41,8 +42,12 @@ function rechercheTache(){
             resultatRecherche.push(element);
         }
     });
-    console.log(resultatRecherche)
-    return resultatRecherche;
+resultatRecherche.forEach(element => {
+    let status = element.isDone ? "Termine" : "En attente";
+    console.log(`${element.id}. ${element.description} [${status}]`);
+});
+
+return resultatRecherche;
 }
 
 function modifierTache(){
@@ -79,14 +84,15 @@ function printTacheID(message){
     return idTo;
 }
 
-function printTermine(){
-    let newValue= prompt("entrer le nouveau status du tache (a/t) ")
-    if (newValue === "a") newValue=false
-    else if  (newValue==="t") newValue=true
-    else {console.log("entrer une valeur valid ") ; return printTermine()}
-    return newValue
+function printTermine() {
+    let input = prompt("Est-ce que la tache est Termine ou En attente entrer (t ou a) : ");
+    if (input === "t") {return true;} 
+    else if (input === "a") { return false; } 
+    else {
+        console.log("entrer une valeur correcte (t ou a)");
+        return printTermine(); 
+    }
 }
-
 
 function findIndex(id){
     return list.findIndex(t => t.id === id);
@@ -119,7 +125,7 @@ while (true){
             let filtered = filterTache();     
             filtered.forEach(element => {
             let status = element.isDone ? "termine" : "en attente";
-            console.log(`${element.id}. ${element.description} ${status}`); });
+            console.log(`${element.id}. ${element.description} [${status}]`); });
             break;
         case 0:
             process.exit();
