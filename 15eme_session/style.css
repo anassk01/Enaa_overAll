@@ -93,18 +93,22 @@ ul {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* HEADER (Sticky) */
 header {
-    position: fixed; /* Stick to top */
+    position: fixed; /* Fixes the navbar to the top */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; /* Ensures it stays on top of all other content */
     padding: 15px 0;
-    /* Brand gradient with opacity/blur to be visible over all sections */
-    background: linear-gradient(90deg, rgba(96, 180, 231, 0.95), rgba(100, 97, 224, 0.95));
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
+    /* 
+       Since we cannot use JS to change the background on scroll, 
+       we use a semi-transparent brand gradient so the white text 
+       remains visible when you scroll down to the white sections.
+    */
+    background: linear-gradient(90deg, rgba(96, 180, 231, 0.9), rgba(100, 97, 224, 0.9));
+    backdrop-filter: blur(8px); /* Adds a nice blur effect behind the nav */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .header-container {
