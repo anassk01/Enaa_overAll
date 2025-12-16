@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            background: #333;
+            padding: 15px 20px;
+        }
+        .menu-toggle {
+            display: none;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+            .menu-toggle:checked ~ ul {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="menu" class="menu-toggle">
+        <label for="menu" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
