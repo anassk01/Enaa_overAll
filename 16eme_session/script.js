@@ -21,7 +21,7 @@ function handleClick(e) {
   
   board[index] = currentPlayer;
   e.target.textContent = currentPlayer;
-  e.target.classList.add('taken', currentPlayer.toLowerCase());
+  e.target.classList.add( currentPlayer.toLowerCase());
   
   const paths = currentPlayer === 'X' ? pathsX : pathsO;
   
@@ -32,9 +32,10 @@ function handleClick(e) {
   });
   
   // mettre a jour les successions restante 
-  for (let i = paths.length - 2; i >= 0; i--) {
+  for (let i = paths.length - 1; i >= 0; i--) {
+    console.log("before filtering",paths[i].remaining)
     paths[i].remaining = paths[i].remaining.filter(combo => combo.includes(index));
-    console.log(paths[i].remaining)
+    console.log("after filtering",paths[i].remaining)
     if (paths[i].remaining.length === 0) {
       paths.splice(i, 1);
       continue;
@@ -72,7 +73,7 @@ function restartGame() {
   
   cells.forEach(cell => {
     cell.textContent = '';
-    cell.classList.remove('taken', 'x', 'o');
+    cell.classList.remove( 'x', 'o');
   });
   
   message.textContent = 'tour de : X';
