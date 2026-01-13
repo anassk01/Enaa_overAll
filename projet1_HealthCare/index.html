@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><h1>Pré-admission</h1></header>
+    <main>
+      <section>
+        <form id="main-form">
+          <label for="prenom"> prenom</label>
+          <input
+            id="prenom"
+            name="prenom"
+            type="text"
+            maxlength="16"
+            required
+          />
+
+          <label for="nom"> nom</label>
+          <input id="nom" name="nom" type="text" maxlength="16" required />
+
+          <label for="email">email</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="phone">phone</label>
+          <input type="tel" name="phone" id="phone" required />
+
+          <label for="motif">motif</label>
+          <input type="text" name="motif" id="motif" />
+
+          <label for="date">date souhaite</label>
+          <input type="date" name="date" id="date" />
+
+          <button type="submit" id="submit-button">submit</button>
+        </form>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>prenom</th>
+              <th>nom</th>
+              <th>email</th>
+              <th>tel</th>
+              <th>motif</th>
+              <th>date</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
