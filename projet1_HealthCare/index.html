@@ -16,23 +16,37 @@
             name="prenom"
             type="text"
             maxlength="16"
+            value="anas"
             required
           />
 
           <label for="nom"> nom</label>
-          <input id="nom" name="nom" type="text" maxlength="16" required />
+          <input
+            id="nom"
+            name="nom"
+            type="text"
+            maxlength="16"
+            value="kabil"
+            required
+          />
 
           <label for="email">email</label>
-          <input type="email" name="email" id="email" required />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value="a@mail.com"
+            required
+          />
 
           <label for="phone">phone</label>
-          <input type="tel" name="phone" id="phone" required />
+          <input type="tel" name="phone" id="phone" value="06060606" required />
 
           <label for="motif">motif</label>
-          <input type="text" name="motif" id="motif" />
+          <input type="text" name="motif" id="motif" value="a" required />
 
           <label for="date">date souhaite</label>
-          <input type="date" name="date" id="date" />
+          <input type="date" name="date" id="date" required />
 
           <button type="submit" id="submit-button">submit</button>
         </form>
@@ -47,11 +61,13 @@
               <th>tel</th>
               <th>motif</th>
               <th>date</th>
+              <th>action</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
         </table>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
