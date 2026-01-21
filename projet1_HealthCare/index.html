@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,11 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header><h1>Pré-admission</h1></header>
     <main>
       <section>
+        <div class="title"><h1>Pré-admission</h1></div>
         <form id="main-form">
-          <label for="prenom"> prenom</label>
+          <label for="prenom">Prenom</label>
           <input
             id="prenom"
             name="prenom"
@@ -20,7 +21,7 @@
             required
           />
 
-          <label for="nom"> nom</label>
+          <label for="nom">Nom</label>
           <input
             id="nom"
             name="nom"
@@ -30,7 +31,7 @@
             required
           />
 
-          <label for="email">email</label>
+          <label for="email">Email</label>
           <input
             type="email"
             name="email"
@@ -39,33 +40,37 @@
             required
           />
 
-          <label for="phone">phone</label>
+          <label for="phone">Phone</label>
           <input type="tel" name="phone" id="phone" value="06060606" required />
 
-          <label for="motif">motif</label>
+          <label for="motif">Motif</label>
           <input type="text" name="motif" id="motif" value="a" required />
 
-          <label for="date">date souhaite</label>
+          <label for="date">Date souhaitée</label>
           <input type="date" name="date" id="date" required />
 
-          <button type="submit" id="submit-button">submit</button>
+          <button type="submit" id="submit-button">Submit</button>
         </form>
       </section>
       <section>
         <table>
           <thead>
             <tr>
-              <th>prenom</th>
-              <th>nom</th>
-              <th>email</th>
-              <th>tel</th>
-              <th>motif</th>
-              <th>date</th>
-              <th>action</th>
+              <th>Prenom</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Tel</th>
+              <th>Motif</th>
+              <th>Date</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
         </table>
+        <div class="pagination">
+          <button id="precedent">-</button>
+          <button id="suivant">+</button>
+        </div>
       </section>
     </main>
     <script src="script.js"></script>
