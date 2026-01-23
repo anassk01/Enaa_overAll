@@ -29,6 +29,27 @@ h1 {
   color: #333;
 }
 
+.message {
+  display: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -44,8 +65,13 @@ label {
 
 input {
   padding: 8px;
-  border: 1px solid;
+  border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #333435;
 }
 
 #submit-button {
@@ -64,7 +90,7 @@ input {
 
 table {
   border-collapse: collapse;
-  min-width: 500px;
+  min-width: 600px;
   font-size: 0.9rem;
 }
 
@@ -80,28 +106,62 @@ th {
   font-weight: 600;
 }
 
+td button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+td button:hover {
+  background-color: #c82333;
+}
+
 .pagination {
   margin-top: 15px;
   display: flex;
   gap: 10px;
+  align-items: center;
+}
+
+#page-info {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
 }
 
 #suivant,
 #precedent {
-  width: 35px;
-  height: 35px;
-  background-color: #eee;
+  padding: 8px 16px;
+  background-color: #333435;
+  color: white;
   border: none;
   border-radius: 4px;
-  font-size: 1.2rem;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 0.9rem;
   transition: background 0.2s;
 }
 
-#suivant:hover,
-#precedent:hover {
-  background-color: #ddd;
+#suivant:hover:not(:disabled),
+#precedent:hover:not(:disabled) {
+  background-color: #4f5458;
+}
+
+#suivant:disabled,
+#precedent:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  table {
+    min-width: 100%;
+  }
 }

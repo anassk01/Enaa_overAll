@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pré-admission</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
       <section>
         <div class="title"><h1>Pré-admission</h1></div>
+        <div id="message" class="message"></div>
         <form id="main-form">
-          <label for="prenom">Prenom</label>
+          <label for="prenom">Prénom</label>
           <input
             id="prenom"
             name="prenom"
             type="text"
-            maxlength="16"
+            maxlength="50"
             value="anas"
             required
           />
@@ -26,7 +27,7 @@
             id="nom"
             name="nom"
             type="text"
-            maxlength="16"
+            maxlength="50"
             value="kabil"
             required
           />
@@ -40,26 +41,32 @@
             required
           />
 
-          <label for="phone">Phone</label>
+          <label for="phone">Téléphone</label>
           <input type="tel" name="phone" id="phone" value="06060606" required />
 
           <label for="motif">Motif</label>
           <input type="text" name="motif" id="motif" value="a" required />
 
           <label for="date">Date souhaitée</label>
-          <input type="date" name="date" id="date" required />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            value="2026-01-23"
+            required
+          />
 
-          <button type="submit" id="submit-button">Submit</button>
+          <button type="submit" id="submit-button">Ajouter</button>
         </form>
       </section>
       <section>
         <table>
           <thead>
             <tr>
-              <th>Prenom</th>
+              <th>Prénom</th>
               <th>Nom</th>
               <th>Email</th>
-              <th>Tel</th>
+              <th>Téléphone</th>
               <th>Motif</th>
               <th>Date</th>
               <th>Action</th>
@@ -68,8 +75,9 @@
           <tbody id="table-body"></tbody>
         </table>
         <div class="pagination">
-          <button id="precedent">-</button>
-          <button id="suivant">+</button>
+          <button id="precedent" disabled>-</button>
+          <span id="page-info">Page 1 / 1</span>
+          <button id="suivant" disabled>+</button>
         </div>
       </section>
     </main>
