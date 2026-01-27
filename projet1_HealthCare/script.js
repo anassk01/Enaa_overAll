@@ -4,6 +4,7 @@ let precedentButton = document.getElementById("precedent");
 let suivantButton = document.getElementById("suivant");
 let pageInfo = document.getElementById("page-info");
 let messageDiv = document.getElementById("message");
+let counterEl = document.getElementById("counter");
 
 let id = 1;
 let currentPage = 1;
@@ -31,6 +32,11 @@ function validate() {
     return false;
   }
   return true;
+}
+
+function updateCounter() {
+  let total = tableBody.querySelectorAll("tr").length;
+  counterEl.textContent = total + " demandes";
 }
 
 function updatePagination() {
@@ -112,11 +118,13 @@ mainForm.addEventListener("submit", (event) => {
     }
 
     updatePagination();
+    updateCounter();
   });
 
   showMessage("Demande ajoutée", true);
   mainForm.reset();
   updatePagination();
+  updateCounter();
 });
 
 precedentButton.addEventListener("click", () => {
