@@ -5,6 +5,7 @@ let suivantButton = document.getElementById("suivant");
 let pageInfo = document.getElementById("page-info");
 let messageDiv = document.getElementById("message");
 let counterEl = document.getElementById("counter");
+let searchInput = document.getElementById("search");
 
 let id = 1;
 let currentPage = 1;
@@ -163,3 +164,11 @@ suivantButton.addEventListener("click", () => {
 });
 
 updatePagination();
+
+searchInput.addEventListener("input", () => {
+  let query = searchInput.value.toLowerCase();
+  tableBody.querySelectorAll("tr").forEach((row) => {
+    let text = row.textContent.toLowerCase();
+    row.hidden = !text.includes(query);
+  });
+});
