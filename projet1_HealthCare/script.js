@@ -172,3 +172,8 @@ searchInput.addEventListener("input", () => {
     row.hidden = !text.includes(query);
   });
 });
+
+document.getElementById("theme-toggle").addEventListener("click", function() {
+  document.body.classList.toggle("dark");
+  this.textContent = document.body.classList.contains("dark") ? "Mode clair" : "Mode sombre";
+});
